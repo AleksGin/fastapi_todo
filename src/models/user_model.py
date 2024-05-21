@@ -9,7 +9,7 @@ class UserTable(Model):
     name: Mapped[str]
 
 
-    def to_read_mode(self) -> UserSchema:
+    def to_read_model(self) -> UserSchema:
         return UserSchema(
             id=self.id,
             name=self.name,

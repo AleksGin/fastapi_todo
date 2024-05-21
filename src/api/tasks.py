@@ -13,7 +13,7 @@ router = APIRouter(prefix="/tasks", tags=["Таски"])
 async def add_task(
     task: Annotated[TaskAddSchema, Depends()],
     tasks_service: Annotated[TaskService, Depends(tasks_service)],
-) -> TaskAddSchema:
+):
     task_id = await tasks_service.add_task_service(task)
     return {"ok": True, "task_id": task_id}
 

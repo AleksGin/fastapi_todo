@@ -13,7 +13,7 @@ class AbstractRepository(ABC):
         raise NotImplementedError
     
     @abstractmethod
-    async def delete_by_id():
+    async def delele_by_id():
         raise NotImplementedError
 
 
@@ -27,7 +27,7 @@ class SQLRepository(AbstractRepository):
             res = await session.execute(stmt)
             await session.flush()
             await session.commit()
-            return res.id
+            return res.scalar_one()
 
     async def find_all(self):
         async with async_session_maker() as session:

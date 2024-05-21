@@ -13,7 +13,7 @@ router = APIRouter(prefix="/users", tags=["Юзеры"])
 async def add_user(
     user: Annotated[UserAddSchema, Depends()],
     user_service: Annotated[UserService, Depends(user_service)],
-) -> UserAddSchema:
+):
     user_id = await user_service.add_one_service(user)
     return {"ok": True, "user_id": user_id}
 

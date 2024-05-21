@@ -17,7 +17,7 @@ class UserService:
         return users
     
     async def delete_by_id_service(self, user_id: int):
-        await self.user_rep.delete_by_id(user_id)
+        await self.user_rep.delele_by_id(user_id)
         return f'Пользователь под id {user_id} успешно удален'
     
 

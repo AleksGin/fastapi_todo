@@ -16,7 +16,7 @@ class TaskTable(Model):
     author_id: Mapped[int] = mapped_column(ForeignKey('our_users.id'))
 
 
-    def to_read_mode(self) -> TaskSchema:
+    def to_read_model(self) -> TaskSchema:
         return TaskSchema(
             id=self.id,
             title=self.title,
